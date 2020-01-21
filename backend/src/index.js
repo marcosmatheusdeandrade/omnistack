@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes.js')
+const cors = require('cors');
 
 const app = express();
 
@@ -9,6 +10,8 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-conrg.mongodb.net/w
     useNewUrlParser: true
 })
 
+//libera acesso externo
+app.use(cors({}));
 app.use(express.json());
 app.use(routes);
 app.listen(3030)
