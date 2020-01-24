@@ -4,6 +4,7 @@ const Dev = require("../models/Dev")
 module.exports = {
     async index (request, response) {
         const devs = await Dev.find();
+        alert('dsfsdfsdf')
         return response.json(devs);
     },
 
